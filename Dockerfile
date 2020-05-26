@@ -1,11 +1,9 @@
 # VERSION:
 #   VERSION="1.0"
 # BUILD:
-#   docker build . -t json2file-go:$VERSION
+#   docker build . -t softcatala/sc-static-file-server:$VERSION
 # RUN:
-#   docker run -v $(pwd)/data:/data --rm --name json2file-go    \
-#              -e JSON2FILE_DIRLIST="test1:123456;test2:" json2file-go:$VERSION
-
+#   docker run -v $(pwd)/data:/data --rm --name scStaticFileServer softcatala/sc-static-file-server:$VERSION
 
 FROM golang:1.13-alpine as builder
 WORKDIR /src
