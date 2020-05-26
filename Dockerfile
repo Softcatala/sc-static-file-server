@@ -15,6 +15,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" \
 FROM scratch
 WORKDIR /
 COPY --from=builder /src/scStaticFileServer .
-ENV JSON2FILE_BASEDIR /data
 VOLUME ["/static", "templates"]
 CMD ["./scStaticFileServer"]
