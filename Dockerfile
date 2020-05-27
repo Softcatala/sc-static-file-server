@@ -15,5 +15,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-s -w" \
 FROM scratch
 WORKDIR /
 COPY --from=builder /src/scStaticFileServer .
-VOLUME ["/static", "templates"]
+VOLUME ["/static", "/templates"]
 CMD ["./scStaticFileServer"]
